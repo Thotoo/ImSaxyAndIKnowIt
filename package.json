@@ -1,10 +1,13 @@
 {
-  "activationEvents": [
-  "onLanguage:sax16"
-],
+  
   "name": "imsaxyandiknowit",
   "displayName": "ImSaxyAndIKnowIt",
+  "publisher": "Thoto",
   "description": "Syntax highlighter for stupid Sax16",
+  "repository": {
+  "type": "git",
+  "url": "https://github.com/Thotoo/ImSaxyAndIKnowIt.git"
+},
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.140.0"
