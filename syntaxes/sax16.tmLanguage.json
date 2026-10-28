@@ -1,0 +1,139 @@
+
+{
+  "scopeName": "source.sax16",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#macro-definitions" },
+	{ "include": "#labels" },
+    { "include": "#declarations" },
+    { "include": "#instructions" },
+    { "include": "#types" },
+    { "include": "#pointers" },
+    { "include": "#constants" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.sax16",
+          "match": "#.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.sax16",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.sax16",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "macro-definitions": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.macro.sax16",
+          "begin": "\\bmacro\\s+([A-Za-z_][A-Za-z0-9_]*)",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.declaration.macro.sax16"
+            },
+            "1": {
+              "name": "entity.name.function.macro.sax16"
+            }
+          },
+          "end": "(?=\\{)",
+          "patterns": [
+            {
+              "name": "variable.parameter.sax16",
+              "match": "\\b[A-Z][A-Z0-9_]*\\b"
+            }
+          ]
+        }
+      ]
+    },
+    "declarations": {
+      "patterns": [
+        {
+          "name": "meta.declaration.sax16",
+          "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)(:)(\\s+)(int8|int16|int32)\\b",
+          "captures": {
+            "1": {
+              "name": "variable.other.declaration.sax16"
+            },
+            "2": {
+              "name": "punctuation.separator.colon.sax16"
+            },
+            "4": {
+              "name": "storage.type.sax16"
+            }
+          }
+        }
+      ]
+    },
+	"labels": {
+	  "patterns": [
+		{
+		  "name": "entity.name.label.sax16",
+		  "match": "^\\s*([A-Za-z_][A-Za-z0-9_]*)(:)",
+		  "captures": {
+			"1": {
+			  "name": "entity.name.label.sax16"
+			},
+			"2": {
+			  "name": "punctuation.separator.colon.sax16"
+			}
+		  }
+		}
+	  ]
+	},
+    "instructions": {
+      "patterns": [
+        {
+          "name": "keyword.instruction.sax16",
+          "match": "\\b(?:set|add|sub|mul|div|if[<>=!]+|write|read|push|pop|call|ret|nop)[0-9]+\\b|\\b(?:set|add|sub|mul|div|write|read)[0-9]+\\b|\\b(?:call|return)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.sax16",
+          "match": "\\bint(?:8|16|32)\\b"
+        }
+      ]
+    },
+    "pointers": {
+      "patterns": [
+        {
+          "name": "variable.other.pointer.sax16",
+          "match": "\\*{1,2}[A-Za-z_][A-Za-z0-9_]*"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.sax16",
+          "match": "\\b(?:true|false|null)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.sax16",
+          "match": "\\b(?:0[xX][0-9a-fA-F]+|[0-9]+)\\b"
+        }
+      ]
+    }
+  }
+}

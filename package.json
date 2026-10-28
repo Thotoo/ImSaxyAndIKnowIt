@@ -1,0 +1,61 @@
+{
+  "activationEvents": [
+  "onLanguage:sax16"
+],
+  "name": "imsaxyandiknowit",
+  "displayName": "ImSaxyAndIKnowIt",
+  "description": "Syntax highlighter for stupid Sax16",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.140.0"
+  },
+  "main": "./out/extension.js",
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "sax16",
+        "aliases": [
+          "Sax16",
+          "sax16"
+        ],
+        "extensions": [
+          ".sax16"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "sax16",
+        "scopeName": "source.sax16",
+        "path": "./syntaxes/sax16.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "SAX16 Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/sax16-dark-color-theme.json"
+      }
+    ],
+    "semanticTokenScopes": [
+  {
+    "language": "sax16",
+    "scopes": {
+      "sax16Label": ["entity.name.label.sax16"]
+    }
+  }
+]
+  },
+  
+  "devDependencies": {
+    "@types/vscode": "^1.140.0",
+    "typescript": "^7.0.2"
+  }
+}

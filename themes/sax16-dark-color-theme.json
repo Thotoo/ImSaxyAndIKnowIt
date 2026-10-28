@@ -1,0 +1,108 @@
+
+{
+  "$schema": "vscode://schemas/color-theme",
+  "name": "SAX16 Dark",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#121314",
+    "editor.foreground": "#C8C8C8",
+    "editorLineNumber.foreground": "#60656B",
+    "editorCursor.foreground": "#FFFFFF",
+    "editor.selectionBackground": "#343B46"
+  },
+  "tokenColors": [
+    {
+      "scope": [
+        "entity.name.label",
+        "entity.name.label.sax16"
+      ],
+      "settings": {
+        "foreground": "#FFD166",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "keyword.instruction.sax16"
+      ],
+      "settings": {
+        "foreground": "#82AAFF"
+      }
+    },
+    {
+      "scope": [
+        "keyword.control.sax16",
+        "keyword.declaration.macro.sax16"
+      ],
+      "settings": {
+        "foreground": "#C792EA",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "entity.name.function.macro.sax16"
+      ],
+      "settings": {
+        "foreground": "#FFCB6B"
+      }
+    },
+    {
+      "scope": [
+        "storage.type.sax16"
+      ],
+      "settings": {
+        "foreground": "#F78C6C"
+      }
+    },
+    {
+      "scope": [
+        "variable.other.pointer.sax16"
+      ],
+      "settings": {
+        "foreground": "#89DDFF"
+      }
+    },
+    {
+      "scope": [
+        "comment.line.number-sign.sax16"
+      ],
+      "settings": {
+        "foreground": "#697565",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": [
+        "string.quoted.single.sax16"
+      ],
+      "settings": {
+        "foreground": "#C3E88D"
+      }
+    },
+    {
+      "scope": [
+        "constant.numeric.sax16"
+      ],
+      "settings": {
+        "foreground": "#F78C6C"
+      }
+    },
+    {
+      "scope": [
+        "constant.character.escape.sax16"
+      ],
+      "settings": {
+        "foreground": "#FF5370"
+      }
+    },
+    {
+      "scope": [
+        "punctuation.separator.label.sax16"
+      ],
+      "settings": {
+        "foreground": "#C8C8C8"
+      }
+    }
+  ]
+}
