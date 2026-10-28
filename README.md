@@ -1,95 +1,76 @@
 # ImSaxyAndIKnowIt
 
-Syntax highlighting for the SAX16 assembly language in Visual Studio Code.
+**Syntax highlighting for SAX16 assembly language in Visual Studio Code.**
+
+ImSaxyAndIKnowIt adds syntax highlighting and a custom dark color theme for SAX16 assembly source files.
 
 ## Features
 
-- Syntax highlighting for SAX16 instructions.
-- Label highlighting and declarations.
-- Macro definition highlighting.
-- Syntax highlighting for integer types such as `int8`, `int16`, and `int32`.
-- Highlighting for pointers, constants, numbers, strings, and comments.
-- Custom **SAX16 Dark** color theme.
+- Syntax highlighting for `.sax16` files
+- Custom **SAX16 Dark** color theme
+- Highlighting for labels and instructions
+- Distinct colors for data types, pointers, numbers, strings, and comments
+- Designed to make SAX16 code easier to read and navigate
 
-## Supported Syntax
+## Example
 
-| Syntax | Examples |
-|---|---|
-| Instructions | `set16`, `add16`, `call`, `ret` |
-| Labels | `start:` |
-| Types | `int8`, `int16`, `int32` |
-| Pointers | `*value`, `**value` |
-| Constants | `true`, `false`, `null` |
-| Numbers | `42`, `0xFF` |
-| Strings | `'Hello, world!'` |
-| Comments | `# This is a comment` |
-| Macros | `macro NAME` |
+The extension highlights common SAX16 language elements, including:
 
-The exact instructions and syntax highlighted depend on the grammar rules included in the extension.
+- **Labels** — control-flow targets and named locations
+- **Instructions** — assembly operations
+- **Control keywords** — directives and macro-related keywords
+- **Data types** — type declarations
+- **Pointers** — pointer-related syntax
+- **Numbers and strings** — constants and literal values
+- **Comments** — comments beginning with `#`
 
 ## Installation
 
 ### Install from a VSIX file
 
-1. Download or build the `.vsix` package.
+1. Download the latest `.vsix` file from the [GitHub Releases page](https://github.com/Thotoo/ImSaxyAndIKnowIt/releases).
 2. Open Visual Studio Code.
-3. Open the Extensions view with `Ctrl+Shift+X`.
-4. Open the `...` menu.
-5. Select **Install from VSIX...**.
-6. Select the `.vsix` file.
+3. Open the **Extensions** view.
+4. Open the `...` menu and select **Install from VSIX...**.
+5. Select the downloaded `.vsix` file.
 
-### Build from source
+### Select the color theme
 
-Clone or download this repository, then run:
+1. Open the Command Palette with `Ctrl+Shift+P` (`Cmd+Shift+P` on macOS).
+2. Search for **Preferences: Color Theme**.
+3. Select **SAX16 Dark**.
+
+## Usage
+
+Open any file with the `.sax16` extension. The language grammar should be detected automatically, and syntax highlighting will be applied.
+
+For the intended colors, select the **SAX16 Dark** theme.
+
+## Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Thotoo/ImSaxyAndIKnowIt.git
+cd ImSaxyAndIKnowIt
+```
+
+Install dependencies and compile:
 
 ```bash
 npm install
 npm run compile
+```
+
+Package the extension into a VSIX file:
+
+```bash
 npx @vscode/vsce package
 ```
 
-This creates a `.vsix` package in the project directory.
+The generated `.vsix` file can be installed locally in Visual Studio Code using **Install from VSIX...**.
 
-## Usage
+## Known limitations
 
-1. Open a file with the `.sax16` extension.
-2. Syntax highlighting should activate automatically.
-3. To use the custom theme, open the Command Palette with `Ctrl+Shift+P`.
-4. Select **Preferences: Color Theme**.
-5. Choose **SAX16 Dark**.
-
-## Development
-
-The extension uses a TextMate grammar defined in:
-
-```text
-syntaxes/sax16.tmLanguage.json
-```
-
-The custom color theme is defined in:
-
-```text
-themes/sax16-dark-color-theme.json
-```
-
-Language configuration is stored in:
-
-```text
-language-configuration.json
-```
-
-After changing the TypeScript extension code, rebuild it with:
-
-```bash
-npm run compile
-```
-
-To test the extension during development, open the project in VS Code and press `F5` to launch an Extension Development Host.
-
-## Contributing
-
-Suggestions, bug reports, and improvements to the SAX16 grammar are welcome.
-
-## License
-
-No license has been specified yet. Add a `LICENSE` file before distributing the project if you want to make its reuse and redistribution terms explicit.
+- The extension currently provides syntax highlighting and a color theme; it does not provide a SAX16 compiler, debugger, or language server.
+- Syntax highlighting depends on the language grammar and the selected color theme.
